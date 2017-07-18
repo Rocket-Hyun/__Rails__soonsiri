@@ -1,0 +1,415 @@
+<div style="position:absolute;left:50%;bottom:10%;">
+  <p class="mic_wrapper" style="position: relative; left:-50%;">
+    <i class="fa fa-microphone" aria-hidden="true"></i>
+  </p>
+</div>
+
+<div class="content" style="">
+  <div class="container" style="height:100%;">
+    <div class="row" style="height:100%;margin-bottom:0;">
+
+      <p class="center white-text hello" style="padding-top:20%;margin:0;">
+        인공지능<br />
+        <span class="soonsiri">Soon-Siri</span> 입니다.<br />
+        <br />
+        무엇을<br />도와드릴까요?
+        <!-- 현재 점검 중 입니다.<br />
+        나중에 다시 와주세요. -->
+        <br />
+      </p>
+
+
+      <div class="talk_text intro">
+        <p style="text-align:left; color:#fff;margin:0;">
+          무엇이 궁금하신가요?
+        </p>
+      </div>
+
+      <div id="main">
+        <div class="talk_text select" id="sec1">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "<span class="soonsiri">최순실</span>이 누구인지 알려줘"
+          </p>
+        </div>
+
+
+        <div class="talk_text select" id="sec4">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "<span class="soonsiri">최순실</span> 최신소식을 알려줘"
+          </p>
+        </div>
+
+        <div class="talk_text select" id="sec2">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "<span class="soonsiri">정유라</span>가 누구인지 알려줘"
+          </p>
+        </div>
+
+        <div class="talk_text select" id="sec3">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "재미있는 드립을 알려줘"
+          </p>
+        </div>
+
+        <!-- <div class="talk_text select" id="sec5">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "그래서 무엇을 해야할까"
+          </p>
+        </div> -->
+
+        <div class="talk_text select" id="sec6">
+          <p style="text-align:right; color:#fff;margin:0;">
+            "다른 사람들 생각을 알고 싶어"
+          </p>
+        </div>
+      </div>
+      <% sc = 0 %>
+      <% Soonsil.order(:order).each do |s| %>
+      <% sc = sc + 1 %>
+        <% if s.image_size == 0.0 %>
+        <div class="talk_text 1-<%= sc %>">
+          <p class="fsize" style="text-align:left; color:#fff;">
+            네, 제가 찾은 결과입니다.
+          </p>
+          <div class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+            <div class="video-container">
+              <iframe width="100%" src="<%= s.image_url %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+            &nbsp;<b class="title"><%= s.title %></b><br />
+            &nbsp;<%= s.content %><br /><br />
+            <% unless s.moreurl.nil? || s.moreurl == "" %>
+              <a href="<%= s.moreurl %>" target="_blank">자세히 알아보기</a>
+            <% end %>
+          </div>
+          <p style="text-align:right; color:#fff;">
+            <span class="more" id="more1-<%= sc %>">"더 알려줘"<br /></span>
+            <span class="back back<%= sc %>">"다른 질문 할래"</span>
+          </p>
+        </div>
+        <% else %>
+        <div class="talk_text 1-<%= sc %>">
+          <p class="fsize" style="text-align:left; color:#fff;">
+            네, 제가 찾은 결과입니다.
+          </p>
+          <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+            <img src="<%= s.image_url %>" style="width:<%= s.image_size %>%;" /><br />
+            &nbsp;<b class="title"><%= s.title %></b><br />
+            &nbsp;<%= s.content %><br /><br />
+            <% unless s.moreurl.nil? || s.moreurl == "" %>
+              <a href="<%= s.moreurl %>" target="_blank">자세히 알아보기</a>
+            <% end %>
+          </p>
+          <p style="text-align:right; color:#fff;">
+            <span class="more" id="more1-<%= sc %>">"더 알려줘"<br /></span>
+            <span class="back back<%= sc %>">"다른 질문 할래"</span>
+          </p>
+        </div>
+        <% end %>
+      <% end %>
+
+      <div class="talk_text 1-<%= sc+1 %>">
+        <p class="fsize" style="text-align:left; color:#fff;">
+          네, 제가 찾은 결과입니다.
+        </p>
+        <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+          <b><a href="http://m.me/aisoonsiri" target="_blank">인공지능 순Siri</a></b>를 여러분이 키워주세요.<br />
+          <b><a href="http://m.me/aisoonsiri" target="_blank">순Siri</a></b>에게 정보를 알려주면 다음 방문자들에게 더 정확하고 최신 정보가 제공됩니다.
+        </p>
+        <p style="text-align:right; color:#fff;">
+          <!-- <span class="more" id="more1-4">"더 알려줘"<br /></span> -->
+          <span class="back back<%= sc+1 %>">"다른 질문 할래"</span>
+        </p>
+      </div>
+
+
+      <% yc = 0 %>
+      <% Yura.order(:order).each do |s| %>
+      <% yc = yc + 1 %>
+      <div class="talk_text 2-<%= yc %>">
+        <p class="fsize" style="text-align:left; color:#fff;">
+          네, 제가 찾은 결과입니다.
+        </p>
+        <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+          <img src="<%= s.image_url %>" style="width:<%= s.image_size %>%;" /><br />
+          &nbsp;<b class="title"><%= s.title %></b><br />
+          &nbsp;<%= s.content %><br /><br />
+          <% unless s.moreurl.nil? || s.moreurl == "" %>
+            <a href="<%= s.moreurl %>" target="_blank">자세히 알아보기</a>
+          <% end %>
+        </p>
+        <p style="text-align:right; color:#fff;">
+          <span class="more" id="more2-<%= yc %>">"더 알려줘"<br /></span>
+          <span class="back back<%= yc %>">"다른 질문 할래"</span>
+        </p>
+      </div>
+      <% end %>
+
+
+      <div class="talk_text 2-<%= yc+1 %>">
+        <p class="fsize" style="text-align:left; color:#fff;">
+          네, 제가 찾은 결과입니다.
+        </p>
+        <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+          <b><a href="http://m.me/aisoonsiri" target="_blank">인공지능 순Siri</a></b>를 여러분이 키워주세요.<br />
+          <b><a href="http://m.me/aisoonsiri" target="_blank">순Siri</a></b>에게 정보를 알려주면 다음 방문자들에게 더 정확하고 최신 정보가 제공됩니다.
+        </p>
+        <p style="text-align:right; color:#fff;">
+          <!-- <span class="more" id="more2-4">"더 알려줘"<br /></span> -->
+          <span class="back back<%= yc+1 %>">"다른 질문 할래"</span>
+        </p>
+      </div>
+
+      <% dc = 0 %>
+      <% Drip.order("RANDOM()").each do |d| %>
+        <% dc = dc + 1 %>
+        <% if d.image_url == nil %>
+          <div class="talk_text 3-<%= dc %>">
+            <p class="fsize" style="text-align:left; color:#fff;">
+              제가 찾은 재미있는 드립입니다.
+            </p>
+            <div class="fsize adblock" style="background-color:rgba(255, 255, 255, .2);padding:10px;">
+              앗, 야생의 광고를 발견했습니다! <br /><br />
+              <style type="text/css">
+              .adslot_1 { width:720px; height: 90px; }
+              @media (max-width:970px) { .adslot_1 { width: 720px; height: 90px; } }
+              @media (max-width:720px) { .adslot_1 { width: 468px; height: 60px; } }
+              @media (max-width:468px) { .adslot_1 { width: 250px; height: 250px; } }
+              </style>
+              <!-- oarmys -->
+              <ins class="adsbygoogle adslot_1"
+                   style="display:inline-block;"
+                   data-ad-client="ca-pub-3651267721573999"
+                   data-ad-slot="8232864664"></ins>
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+            <p style="text-align:right; color:#fff;margin:0;">
+              <span class="more" id="more3-<%= dc %>">"더 알려줘"<br /></span>
+              <span class="back back<%= dc %>">"다른 질문 할래"</span>
+            </p>
+          </div>
+        <% else %>
+          <div class="talk_text 3-<%= dc %>">
+            <p class="fsize" style="text-align:left; color:#fff;margin:0;">
+              제가 찾은 재미있는 드립입니다.<br />
+              사진을 클릭하면 자세히 볼 수 있습니다.<br /><br />
+              <img class="drip_img" src="<%= d.image_url %>"><br />
+              <% if d.source != "" %>
+                <a target="_blank" href="<%= d.source_url %>" style="font-size:0.5em;">사진출처:<%= d.source %></a>
+              <% end %>
+            </p>
+            <p style="text-align:right; color:#fff;margin:0;">
+              <span class="more" id="more3-<%= dc %>">"더 알려줘"<br /></span>
+              <span class="back back<%= dc %>">"다른 질문 할래"</span>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="talk_text 3-<%= dc+1 %>">
+        <p class="fsize" style="text-align:left; color:#fff;">
+          네, 제가 찾은 결과입니다.
+        </p>
+        <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+          <b><a href="http://m.me/aisoonsiri" target="_blank">인공지능 순Siri</a></b>를 키워주세요.<br />
+          <b><a href="http://m.me/aisoonsiri" target="_blank">순Siri</a></b>에게 드립을 알려주면 다음 방문자들에게 더 재미있는 최신 드립이 제공됩니다.
+        </p>
+        <p style="text-align:right; color:#fff;">
+          <!-- <span class="more" id="more2-4">"더 알려줘"<br /></span> -->
+          <span class="back back<%= dc+1 %>">"다른 질문 할래"</span>
+        </p>
+      </div>
+
+
+      <!-- <div class="talk_text 4-1">
+        <p class="fsize" style="text-align:left; color:#fff;">
+          네, 제가 찾은 결과입니다.
+        </p>
+        <p class="fsize" style="color:#fff;background-color:rgba(255, 255, 255, .2);padding:10px;">
+          &nbsp;이번 주 토요일(11월 12일)에 '순실길 밟기 캠페인'에 참여하는건 어떠세요?
+          <br /><br />
+            <a href="http://soonsilwalk.com" target="_blank"><img src="<%= image_path 'longimg.jpg' %>" style="width:100%;" /></a>
+        </p>
+        <p style="text-align:right; color:#fff;">
+          <span class="back back<%= dc+1 %>">"다른 질문 할래"</span>
+        </p>
+      </div> -->
+
+      <!-- <div class="row"> -->
+        <div class="talk_text 5-1 social">
+          <p class="fsize" style="text-align:left; color:#fff;">
+            네, 제가 찾은 결과입니다.
+          </p>
+          <div class="fsize" style="color:#fff;background-color:#fff;padding:10px;">
+            <!-- 라이브리 시티 설치 코드 -->
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzEzMy8zNzIz">
+            	<script type="text/javascript">
+               (function(d, s) {
+                   var j, e = d.getElementsByTagName(s)[0];
+
+                   if (typeof LivereTower === 'function') { return; }
+
+                   j = d.createElement(s);
+                   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                   j.async = true;
+
+                   e.parentNode.insertBefore(j, e);
+               })(document, 'script');
+            	</script>
+            <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
+            </div>
+            <!-- 시티 설치 코드 끝 -->
+          </div>
+          <p style="text-align:right; color:#fff;">
+            <!-- <span class="more" id="more2-4">"더 알려줘"<br /></span> -->
+            <span class="back back<%= dc+1 %>">"다른 질문 할래"</span>
+          </p>
+        </div>
+      <!-- </div> -->
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+      $('.drip_img').materialbox();
+      $('.normalimg').materialbox();
+    });
+
+
+    $(".drip_img").click(function() {
+      if ($(window).width() < 768) {
+        $('.drip_img').attr('width', '100%');
+      } else {
+        $('.drip_img').attr('width', '40%');
+      }
+    });
+
+    $(".fa-microphone").click(function() {
+      $('.hello').hide();
+      $('.mic_wrapper').hide();
+      $('.intro').show();
+      setTimeout(function(){
+        $('.select').fadeIn("slow");
+      }, 1000);
+    });
+
+    $(".select").click(function() {
+      var a = $(this).attr('id');
+      $('#sec1').hide();
+      $('#sec2').hide();
+      $('#sec3').hide();
+      $('#sec4').hide();
+      // $('#sec5').hide();
+      $('#sec6').hide();
+        if (a =='sec1'){
+          $('#sec1').show();
+          setTimeout(function(){
+            $('.1-1').fadeIn("slow");
+          }, 1000);
+        }
+        else if (a =='sec2') {
+          $('#sec2').show();
+          setTimeout(function(){
+            $('.2-1').fadeIn("slow");
+          }, 1000);
+        }
+        else if (a =='sec3') {
+          $('#sec3').show();
+          setTimeout(function(){
+            $('.3-1').fadeIn("slow");
+            $('html,body').animate({
+              scrollTop: $(".3-1").offset().top},
+            'slow');
+          }, 1000);
+        }
+        else if (a =='sec4') {
+          $('#sec4').show();
+          setTimeout(function(){
+
+            $('.1-<%= sc-1 %>').fadeIn("slow");
+          }, 1000);
+        }
+        else if (a =='sec5') {
+          $('#sec5').show();
+          setTimeout(function(){
+            $('.4-1').fadeIn("slow");
+          }, 1000);
+        }
+        else if (a =='sec6') {
+          $('#sec6').show();
+          setTimeout(function(){
+            $('.5-1').fadeIn("slow");
+          }, 1000);
+        }
+    });
+
+    $('.back').click(function() {
+        $('.talk_text').hide();
+        $('.intro').show();
+        $('#sec1').show();
+        $('#sec2').show();
+        $('#sec3').show();
+        $('#sec4').show();
+        // $('#sec5').show();
+        $('#sec6').show();
+        $('.back').show();
+    });
+
+
+    <% sc = 0 %>
+    <% Soonsil.all.each do |d| %>
+    <% sc = sc +1 %>
+      $("#more1-<%= sc %>").click(function() {
+        $('.back<%= sc %>').hide();
+        setTimeout(function(){
+          $('.1-<%= sc+1 %>').fadeIn("slow");
+        }, 1000);
+        setTimeout(function(){
+          $('html,body').animate({
+              scrollTop: $(".1-<%= sc+1 %>").offset().top},
+              'slow');
+        }, 1000);
+      });
+    <% end %>
+
+    <% yc = 0 %>
+    <% Yura.all.each do |d| %>
+    <% yc = yc +1 %>
+      $("#more2-<%= yc %>").click(function() {
+        $('.back<%= yc %>').hide();
+        setTimeout(function(){
+          $('.2-<%= yc+1 %>').fadeIn("slow");
+        }, 1000);
+        setTimeout(function(){
+          $('html,body').animate({
+              scrollTop: $(".2-<%= yc+1 %>").offset().top},
+              'slow');
+        }, 1000);
+      });
+    <% end %>
+
+
+    <% dc = 0 %>
+    <% Drip.all.each do |d| %>
+    <% dc = dc +1 %>
+      $("#more3-<%= dc %>").click(function() {
+        $('.back<%= dc %>').hide();
+        setTimeout(function(){
+          $('.3-<%= dc+1 %>').fadeIn("slow");
+        }, 1000);
+        setTimeout(function(){
+          $('html,body').animate({
+              scrollTop: $(".3-<%= dc+1 %>").offset().top},
+              'slow');
+        }, 1000);
+      });
+    <% end %>
+
+
+
+</script>

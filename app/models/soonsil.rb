@@ -1,0 +1,2 @@
+class Soonsil < ApplicationRecord
+end

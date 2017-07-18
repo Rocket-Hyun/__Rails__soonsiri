@@ -1,0 +1,2 @@
+class Drip < ApplicationRecord
+end

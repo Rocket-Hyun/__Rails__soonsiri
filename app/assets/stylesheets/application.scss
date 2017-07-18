@@ -1,0 +1,211 @@
+@import "materialize";
+
+@charset "UTF-8";
+
+// Mixins
+// @import "materialize/components/prefixer";
+@import "materialize/components/mixins";
+@import "materialize/components/color";
+
+// Variables;
+@import "materialize/components/variables";
+
+// Reset
+@import "materialize/components/normalize";
+
+// materialize/components
+@import "materialize/components/global";
+@import "materialize/components/icons-material-design";
+@import "materialize/components/grid";
+@import "materialize/components/navbar";
+@import "materialize/components/roboto";
+@import "materialize/components/typography";
+@import "materialize/components/cards";
+@import "materialize/components/toast";
+@import "materialize/components/tabs";
+@import "materialize/components/tooltip";
+@import "materialize/components/buttons";
+@import "materialize/components/dropdown";
+@import "materialize/components/waves";
+@import "materialize/components/modal";
+@import "materialize/components/collapsible";
+@import "materialize/components/chips";
+@import "materialize/components/materialbox";
+@import "materialize/components/forms/forms";
+@import "materialize/components/table_of_contents";
+@import "materialize/components/sideNav";
+@import "materialize/components/preloader";
+@import "materialize/components/slider";
+@import "materialize/components/carousel";
+@import "materialize/components/date_picker/default";
+@import "materialize/components/date_picker/default.date";
+@import "materialize/components/date_picker/default.time";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+html {
+  height:100%;
+}
+body{
+  // height:100%;
+  font-family: 'Nanum Square';
+  background-size:cover;
+  color:#fff;
+  // position: relative;
+}
+p{
+  margin:10px;
+}
+.soonsiri{
+  border-bottom: 4px dotted #1F6EE4;
+  text-decoration: none;
+}
+
+.content{
+  background-size:cover;
+}
+
+.hello{
+  font-size:4.0em;
+}
+.talk_text{
+  font-size:3.0em;
+  padding-bottom:0px !important;
+}
+
+.fa-microphone{
+  color:white;
+  font-size:4.0em;
+}
+
+.fsize{
+  font-size: 0.8em;
+}
+.fsize0{
+  font-size: 2em;
+}
+.fsize1 {
+  font-size: 2.3em;
+}
+.fsize2 {
+  font-size: 3.3em;
+}
+.fsize3 {
+  font-size: 4.2em;
+}
+.fsize4 {
+  font-size: 5em;
+}
+
+.title{
+  font-size: 1.4em;
+}
+.drip_img {
+  width:40%;
+}
+
+@media (max-width: 768px) {
+    .hello{
+      font-size:2.3em;
+    }
+    .talk_text{
+        font-size:1.5em;
+    }
+    .fsize{
+      font-size: 0.6em;
+    }
+    .fsize0{
+      font-size: 1.2em;
+    }
+    .fsize1 {
+      font-size: 1.3em;
+    }
+    .fsize2 {
+      font-size: 1.8em;
+    }
+    .fsize3 {
+      font-size: 2.5em;
+    }
+    .fsize4 {
+      font-size: 3.5em;
+    }
+
+
+    .fa-microphone{
+      color:white;
+      font-size:3.0em;
+    }
+
+    .drip_img {
+      width:100%;
+    }
+
+    .title{
+      font-size: 1.3em;
+    }
+}
+
+.micwrapper{
+  // position:relative;
+}
+
+.fa-microphone{
+  // position:absolute;
+}
+
+.talk_text {
+  width:100%;
+  padding: 30px;
+  display:none;
+}
+
+.drip{
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.title{
+  text-decoration: underline;
+}
+
+
+// 인스타 css
+#instaPics {
+      max-width: 320px;
+      overflow: hidden;
+ }
+ .insta-box {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      float: left;
+      margin: 4px;
+      border: 1px solid #ddd;
+ }
+ .image-layer {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+ }
+ .image-layer img {
+      max-width: 100%;
+ }
+ .caption-layer {
+      display: none;
+      position: absolute;
+      top: 0;
+      background: rgba(255,255,255,0.8);
+      height: 100%;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 10px;
+      color: #333;
+ }
+ .insta-likes {
+      float: right;
+ }
+
+.social{
+  padding-left:0px !important;
+  padding-right:0px !important;
+}

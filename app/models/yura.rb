@@ -1,0 +1,2 @@
+class Yura < ApplicationRecord
+end

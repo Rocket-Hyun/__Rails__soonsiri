@@ -1,0 +1,33 @@
+<h1>드립DB 수정</h1><br />
+
+<div class="row">
+  <br />
+  <a href="/manager/drip">뒤로</a>
+  <form class="col s12" action="/manager/drip_rewrite/<%= @post.id =%>" method="POST" enctype="multipart/form-data">
+    <div class="row">
+      <div class="input-field col s12">
+        <input value="<%= @post.title %>" id="first_name" type="text" class="validate" name="title">
+        <label for="first_name">제목</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.content %>" id="content" type="text" class="validate" name="content">
+        <label for="content">내용</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.image_size %>" id="img_size" type="text" class="validate" name="size">
+        <label for="img_size">이미지사이즈</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.source %>" id="source" type="text" class="validate" name="source">
+        <label for="source">출처</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.source_url %>" id="source_url" type="text" class="validate" name="source_url">
+        <label for="source_url">출처링크</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>

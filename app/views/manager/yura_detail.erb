@@ -1,0 +1,37 @@
+<h1>정유라DB 수정</h1><br />
+
+<div class="row">
+  <br />
+  <a href="/manager/yura">뒤로</a>
+  <form class="col s12" action="/manager/yura_rewrite/<%= @post.id =%>" method="POST" enctype="multipart/form-data">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="first_name" type="text" class="validate" name="title" value="<%= @post.title %>">
+        <label for="first_name">제목</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea id="last_name" type="text" class="materialize-textarea" name="content"><%= @post.content %></textarea>
+        <label for="last_name">내용</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.order %>" id="last_name" type="text" class="validate" name="order">
+        <label for="last_name">순서</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.image_size %>" id="last_name" type="text" class="validate" name="size">
+        <label for="last_name">이미지사이즈(영상이면 0)</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.image_url %>" id="video_url" type="text" class="validate" name="video">
+        <label for="video_url">영상주소</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="<%= @post.moreurl %>" id="more_url" type="text" class="validate" name="moreurl">
+        <label for="more_url">더보기링크</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>
